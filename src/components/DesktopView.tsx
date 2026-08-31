@@ -29,7 +29,7 @@ export default function DesktopView({
       {/* Dynamic Background Area */}
       <div className="absolute inset-0 z-0 opacity-[0.15] transition-all duration-1000 ease-in-out mix-blend-screen" 
         style={{ 
-          backgroundImage: `url('/images/${activeTab === 'story' ? 'bgstory.webp' : activeTab === 'works' ? 'bgwork.webp' : 'bg.webp'}')`, 
+          backgroundImage: `url('/Portogamegweh/images/${activeTab === 'story' ? 'bgstory.webp' : activeTab === 'works' ? 'bgwork.webp' : 'bg.webp'}')`, 
           backgroundSize: 'cover', 
           backgroundPosition: 'center',
           filter: 'grayscale(100%) contrast(120%)'
@@ -63,7 +63,7 @@ export default function DesktopView({
           {/* Profil Avatar Card */}
           <div className="flex items-center gap-2 mb-6">
             <div className="w-14 h-14 rounded-md border border-zinc-700 bg-zinc-800 overflow-hidden flex items-center justify-center relative z-20 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/images/avatars/1.jpg" alt="Fero Avatar" />
+              <img src="/Portogamegweh/images/avatars/1.jpg" alt="Fero Avatar" />
             </div>
             <div className="bg-zinc-900/80 px-4 py-1.5 rounded-md border border-zinc-800 font-pixel text-lg text-zinc-300 flex items-center gap-2 -ml-2 pl-4 shadow-sm">
               Fero_Fasya <PenTool size={12} className="text-zinc-500 cursor-pointer hover:text-zinc-300" onClick={() => setIsEditModalOpen(true)} />
@@ -121,7 +121,7 @@ export default function DesktopView({
             </div>
             <div className="bg-zinc-900 border border-zinc-700 rounded-md h-24 overflow-hidden relative flex items-center group-hover:border-zinc-500 transition-colors">
               <div className="w-2/5 h-full relative overflow-hidden bg-zinc-950 border-r border-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-500">
-                <img className="w-full h-full object-cover opacity-60" src="/images/projects/mywebu.jpeg" alt="Mywebu" />
+                <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.jpeg" alt="Mywebu" />
               </div>
               <div className="w-3/5 p-4 bg-zinc-900 flex flex-col justify-center h-full">
                 <span className="text-sm font-pixel text-zinc-200 uppercase">Mywebu</span>
@@ -221,7 +221,7 @@ export default function DesktopView({
           {activeTab === 'story' && (
             <div className="absolute inset-0 flex flex-col z-20">
               <div className="flex-1 relative pointer-events-none">
-                <img src="/avatar.png" alt="Fero VN Sprite" className="absolute bottom-0 left-[10%] max-h-full w-auto object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] grayscale opacity-80 mix-blend-lighten" />
+                <img src="/Portogamegweh/avatar.png" alt="Fero VN Sprite" className="absolute bottom-0 left-[10%] max-h-full w-auto object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] grayscale opacity-80 mix-blend-lighten" />
               </div>
               <div className="h-48 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/90 to-transparent p-6 flex items-end">
                 <div className="w-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-6 relative">

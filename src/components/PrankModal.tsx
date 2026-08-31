@@ -61,7 +61,7 @@ export default function PrankModal({
         ) : (
           <div className="animate-slide-in">
             <div className="text-6xl mb-4 animate-bounce">
-              <img src="/images/projects/wagu.jpg" className="w-20 h-20 rounded-lg mx-auto" alt="" />
+              <img src="/Portogamegweh/images/projects/wagu.jpg" className="w-20 h-20 rounded-lg mx-auto" alt="" />
             </div>
             <h2 className="text-xl font-black text-pink-600 mb-2 leading-snug">
               Mweheh, enak aja ganti-ganti nama orang!

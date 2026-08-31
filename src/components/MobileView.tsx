@@ -28,7 +28,7 @@ export default function MobileView({
       {/* Dynamic Background Area */}
       <div className="absolute inset-0 z-0 opacity-[0.15] transition-all duration-1000 ease-in-out mix-blend-screen" 
         style={{ 
-          backgroundImage: `url('/images/${activeTab === 'story' ? 'bgstory.webp' : activeTab === 'works' ? 'bgwork.webp' : 'bg.webp'}')`, 
+          backgroundImage: `url('/Portogamegweh/images/${activeTab === 'story' ? 'bgstory.webp' : activeTab === 'works' ? 'bgwork.webp' : 'bg.webp'}')`, 
           backgroundSize: 'cover', 
           backgroundPosition: 'center',
           filter: 'grayscale(100%) contrast(120%)'
@@ -63,7 +63,7 @@ export default function MobileView({
                   <div className="flex justify-between items-start mb-8">
                     <div className="flex items-center gap-1 shrink-0">
                       <div className="w-14 h-14 rounded-md border border-zinc-700 bg-zinc-800 overflow-hidden flex items-center justify-center relative z-20 shrink-0 grayscale transition-all duration-300">
-                        <img src="/images/avatars/1.jpg" alt="Fero Avatar" className="w-full h-full object-cover" />
+                        <img src="/Portogamegweh/images/avatars/1.jpg" alt="Fero Avatar" className="w-full h-full object-cover" />
                       </div>
                       <div className="bg-zinc-900/90 px-3 py-1.5 rounded-md border border-zinc-700 font-pixel text-xs text-zinc-300 flex items-center gap-2 -ml-2 pl-4 whitespace-nowrap shrink-0 shadow-sm uppercase">
                         Fero_Fasya <PenTool size={12} className="text-zinc-500 cursor-pointer hover:text-zinc-300 shrink-0" onClick={() => setIsEditModalOpen(true)} />
@@ -133,7 +133,7 @@ export default function MobileView({
                     <div className="absolute -top-3 left-0 bg-zinc-800 text-zinc-300 text-[10px] font-pixel px-3 py-1 rounded-sm border border-zinc-700 z-10 shadow-sm uppercase">~$ feat_project.exe</div>
                     <div className="bg-zinc-900 border border-zinc-700 rounded-md h-20 overflow-hidden relative flex items-center group-hover:border-zinc-500 transition-colors">
                       <div className="w-1/3 h-full relative overflow-hidden bg-zinc-950 border-r border-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-500">
-                        <img className="w-full h-full object-cover opacity-60" src="/images/projects/mywebu.jpeg" alt="Mywebu" />
+                        <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.jpeg" alt="Mywebu" />
                       </div>
                       <div className="w-2/3 px-3 bg-zinc-900 flex flex-col justify-center h-full">
                         <span className="text-sm font-pixel text-zinc-200 uppercase">Mywebu</span>
@@ -326,7 +326,7 @@ export default function MobileView({
 
             {/* Character Sprite */}
             <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 h-[65%] w-full max-w-[300px] pointer-events-none flex justify-center items-end z-10 opacity-95">
-              <img src="/avatar.png" alt="Fero VN Sprite" className="h-full w-auto object-contain drop-shadow-[0_15px_20px_rgba(0,0,0,0.8)] animate-float grayscale opacity-80 mix-blend-lighten" />
+              <img src="/Portogamegweh/avatar.png" alt="Fero VN Sprite" className="h-full w-auto object-contain drop-shadow-[0_15px_20px_rgba(0,0,0,0.8)] animate-float grayscale opacity-80 mix-blend-lighten" />
             </div>
             
             {/* Dialog Box Container (Pushed to bottom) */}
