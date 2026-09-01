@@ -270,13 +270,15 @@ export default function DesktopView({
               </div>
               
               <div className="flex-1 overflow-y-auto custom-scrollbar pr-4 pb-24 relative z-20">
-                <div className="grid grid-cols-6 grid-rows-2 gap-4 h-full min-h-[400px]">
+                <div className="grid grid-cols-6 auto-rows-[220px] gap-4">
                   {projects.map((proj, i) => {
                     let colSpan = 'col-span-2';
                     let rowSpan = 'row-span-1';
                     
                     if (i === 3 || i === 4) {
                       colSpan = 'col-span-3';
+                    } else if (i === 8) {
+                      colSpan = 'col-span-6';
                     }
 
                     return (
