@@ -86,7 +86,7 @@ export default function MobileView({
                   <div className="mb-5 pl-1 pr-2 space-y-3">
                     <div>
                       <div className="text-[10px] font-bold text-zinc-500 mb-1 flex items-center gap-1 uppercase tracking-widest">
-                        &gt; MATCHA_LVL
+                        &gt; GAPMOE_LVL
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="text-3xl font-pixel text-zinc-300">99</div>
@@ -187,7 +187,7 @@ export default function MobileView({
                       <X size={12} strokeWidth={2.5} />
                     </div>
                     <div className="text-[9px] text-zinc-500 font-pixel mb-1.5 uppercase">~$ user.quote</div>
-                    <p className="font-mono text-zinc-300 text-[10px] leading-relaxed">"I survive on matcha and spaghetti.<br/>Let's make history together."</p>
+                    <p className="font-mono text-zinc-300 text-[10px] leading-relaxed">"Aku ingin mengukir sejarah.<br/>Destinasi impian aku... Tokyo · New York · London · Shanghai."</p>
                     <p className="text-[9px] text-zinc-500 mt-2 font-mono">&gt; Fero Fasya</p>
                   </div>
                 )}

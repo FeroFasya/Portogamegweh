@@ -71,7 +71,7 @@ export default function DesktopView({
           <div className="mb-6 pl-2 space-y-4">
             <div>
               <div className="text-[10px] font-bold text-zinc-500 mb-1 flex items-center gap-1 uppercase tracking-widest">
-                &gt; MATCHA_LVL
+                &gt; GAPMOE_LVL
               </div>
               <div className="flex items-center gap-3">
                 <div className="text-3xl font-pixel text-zinc-300">99</div>
@@ -182,7 +182,7 @@ export default function DesktopView({
                       <X size={12} strokeWidth={2.5} />
                     </div>
                     <div className="text-xs text-zinc-500 font-pixel mb-2 uppercase">~$ user.quote</div>
-                    <p className="font-mono text-zinc-300 text-xs leading-relaxed">"I survive on matcha and spaghetti. Let's make history together."</p>
+                    <p className="font-mono text-zinc-300 text-xs leading-relaxed">"Aku ingin mengukir sejarah.<br/>Destinasi impian aku... Tokyo · New York · London · Shanghai."</p>
                     <p className="text-[10px] text-zinc-500 mt-3 font-mono">&gt; Fero Fasya</p>
                   </div>
                 </div>
@@ -231,8 +231,8 @@ export default function DesktopView({
                     Fero_Fasya
                   </div>
                   <div className="text-zinc-300 font-mono text-sm leading-relaxed pr-8 pt-2">
-                    <p className="mb-2">&gt; Born in Jakarta and now building things in Bandung. I am a 6th-semester Informatics Engineering student at USBYPKP.</p>
-                    <p>&gt; I love Anime, Games, storytelling, astronomy, and philosophy. I'm currently working on AIKA (3D VRM AI) and KIRA AI TRAINER. Code isn't just logic; it's a medium to create immersive experiences.</p>
+                      <p className="mb-2">&gt; Born in Jakarta and now building things in Bandung. I am a 6th-semester Informatics Engineering student at USBYPKP.</p>
+                      <p>&gt; I love Anime, Games, storytelling, astronomy, and philosophy. I'm currently working on AIKA (3D VRM AI) and KIRA AI TRAINER. Code isn't just logic; it's a medium to create immersive experiences.</p>
                   </div>
                   <div className="absolute bottom-4 right-4 text-zinc-500 animate-pulse"><Play fill="currentColor" size={20} /></div>
                 </div>
