@@ -27,13 +27,12 @@ export default function DesktopView({
   return (
     <div className="hidden lg:flex w-full h-screen relative bg-[#0c0c0c] font-sans text-zinc-300">
       {/* Dynamic Background Area */}
-      <div className="absolute inset-0 z-0 opacity-[0.15] transition-all duration-1000 ease-in-out mix-blend-screen" 
-        style={{ 
-          backgroundImage: `url('/Portogamegweh/images/${activeTab === 'story' ? 'bgstory.webp' : activeTab === 'works' ? 'bgwork.webp' : 'bg.webp'}')`, 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center',
-          filter: 'grayscale(100%) contrast(120%)'
-        }}>
+
+      {/* Preloaded and GPU-accelerated backgrounds */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'home' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bg.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'story' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgstory.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'works' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgwork.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
       </div>
       <div className="absolute inset-0 z-0 bg-noise opacity-50 pointer-events-none mix-blend-overlay"></div>
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
