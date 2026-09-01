@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Code, FolderOpen, PenTool, BrainCircuit,
   User, BookOpen, MessageSquare,
-  Mail, ChevronRight, Play, Star, Settings, Award
+  Mail, ChevronRight, Play, Star, Settings, Award, X
 } from 'lucide-react';
 import { projects, socialLinks } from '../data/constants';
 import BottomNav from './BottomNav';
@@ -24,6 +24,7 @@ export default function DesktopView({
   setIsEditModalOpen,
   setIsCertModalOpen
 }: DesktopViewProps) {
+  const [isQuoteVisible, setIsQuoteVisible] = useState(true);
   return (
     <div className="hidden lg:flex w-full h-screen relative bg-[#0c0c0c] font-sans text-zinc-300">
       {/* Dynamic Background Area */}
@@ -174,13 +175,18 @@ export default function DesktopView({
               </div>
 
               {/* Chat Bubble */}
-              <div className="absolute top-[25%] left-[40%] animate-float pointer-events-auto z-20" style={{ animationDelay: '1s' }}>
-                <div className="bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-4 max-w-xs relative text-left">
-                  <div className="text-xs text-zinc-500 font-pixel mb-2 uppercase">~$ user.quote</div>
-                  <p className="font-mono text-zinc-300 text-xs leading-relaxed">"I survive on matcha and spaghetti. Let's make history together."</p>
-                  <p className="text-[10px] text-zinc-500 mt-3 font-mono">&gt; Fero Fasya</p>
+              {isQuoteVisible && (
+                <div className="absolute top-[25%] left-[40%] animate-float pointer-events-auto z-20" style={{ animationDelay: '1s' }}>
+                  <div className="bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-4 max-w-xs relative text-left group">
+                    <div className="absolute -top-2 -right-2 bg-zinc-800 border border-zinc-600 rounded-sm w-5 h-5 flex items-center justify-center cursor-pointer text-zinc-400 hover:text-white hover:bg-red-500/80 transition-colors z-10 opacity-0 group-hover:opacity-100" onClick={() => setIsQuoteVisible(false)}>
+                      <X size={12} strokeWidth={2.5} />
+                    </div>
+                    <div className="text-xs text-zinc-500 font-pixel mb-2 uppercase">~$ user.quote</div>
+                    <p className="font-mono text-zinc-300 text-xs leading-relaxed">"I survive on matcha and spaghetti. Let's make history together."</p>
+                    <p className="text-[10px] text-zinc-500 mt-3 font-mono">&gt; Fero Fasya</p>
+                  </div>
                 </div>
-              </div>
+              )}
               
               {/* Floating Certificate Sticker */}
               <div 

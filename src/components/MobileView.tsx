@@ -23,6 +23,7 @@ export default function MobileView({
   setIsCertModalOpen
 }: MobileViewProps) {
   const [isSocialOpen, setIsSocialOpen] = useState(false);
+  const [isQuoteVisible, setIsQuoteVisible] = useState(true);
   return (
     <div className="flex lg:hidden w-full h-screen flex-col relative bg-[#0c0c0c] text-zinc-300 font-sans overflow-hidden">
       {/* Dynamic Background Area */}
@@ -128,7 +129,7 @@ export default function MobileView({
                     <div className="absolute -top-3 left-0 bg-zinc-800 text-zinc-300 text-[10px] font-pixel px-3 py-1 rounded-sm border border-zinc-700 z-10 shadow-sm uppercase">~$ feat_project.exe</div>
                     <div className="bg-zinc-900 border border-zinc-700 rounded-md h-20 overflow-hidden relative flex items-center group-hover:border-zinc-500 transition-colors">
                       <div className="w-1/3 h-full relative overflow-hidden bg-zinc-950 border-r border-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-500">
-                        <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.jpeg" alt="Mywebu" />
+                        <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.webp" alt="Mywebu" />
                       </div>
                       <div className="w-2/3 px-3 bg-zinc-900 flex flex-col justify-center h-full">
                         <span className="text-sm font-pixel text-zinc-200 uppercase">Mywebu</span>
@@ -180,11 +181,16 @@ export default function MobileView({
               <div className="flex-1 w-full flex flex-col justify-around items-center z-20 mt-4">
                 
                 {/* Chat Bubble */}
-                <div className="w-full max-w-[200px] bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-3 shadow-md relative text-left ml-auto mt-8">
-                  <div className="text-[9px] text-zinc-500 font-pixel mb-1.5 uppercase">~$ user.quote</div>
-                  <p className="font-mono text-zinc-300 text-[10px] leading-relaxed">"I survive on matcha and spaghetti.<br/>Let's make history together."</p>
-                  <p className="text-[9px] text-zinc-500 mt-2 font-mono">&gt; Fero Fasya</p>
-                </div>
+                {isQuoteVisible && (
+                  <div className="w-full max-w-[200px] bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-3 shadow-md relative text-left ml-auto mt-8 group animate-fade-in">
+                    <div className="absolute -top-2 -right-2 bg-zinc-800 border border-zinc-600 rounded-sm w-5 h-5 flex items-center justify-center cursor-pointer text-zinc-400 hover:text-white hover:bg-red-500/80 transition-colors z-10 opacity-0 group-hover:opacity-100" onClick={() => setIsQuoteVisible(false)}>
+                      <X size={12} strokeWidth={2.5} />
+                    </div>
+                    <div className="text-[9px] text-zinc-500 font-pixel mb-1.5 uppercase">~$ user.quote</div>
+                    <p className="font-mono text-zinc-300 text-[10px] leading-relaxed">"I survive on matcha and spaghetti.<br/>Let's make history together."</p>
+                    <p className="text-[9px] text-zinc-500 mt-2 font-mono">&gt; Fero Fasya</p>
+                  </div>
+                )}
 
                 {/* START Button */}
                 <div className="relative mt-auto mb-10" onClick={() => setActiveTab('works')}>
@@ -204,7 +210,7 @@ export default function MobileView({
                   onClick={() => setIsSocialOpen(!isSocialOpen)}
                   className="w-10 h-10 bg-zinc-900 rounded-sm border border-zinc-700 shadow-md flex items-center justify-center z-20 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all"
                 >
-                  {isSocialOpen ? <X size={18} strokeWidth={2} /> : <Share2 size={18} strokeWidth={2} />}
+                  {isSocialOpen ? <X size={18} strokeWidth={2.5} /> : <Star size={18} strokeWidth={2.5} />}
                 </button>
 
                 <div className={`flex flex-col gap-2 transition-all duration-300 overflow-hidden ${isSocialOpen ? 'max-h-[350px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-50'} origin-top`}>
