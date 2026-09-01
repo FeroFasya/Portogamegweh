@@ -117,7 +117,7 @@ export default function DesktopView({
             </div>
             <div className="bg-zinc-900 border border-zinc-700 rounded-md h-24 overflow-hidden relative flex items-center group-hover:border-zinc-500 transition-colors">
               <div className="w-2/5 h-full relative overflow-hidden bg-zinc-950 border-r border-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-500">
-                <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.jpeg" alt="Mywebu" />
+                <img className="w-full h-full object-cover opacity-60" src="/Portogamegweh/images/projects/mywebu.webp" alt="Mywebu" />
               </div>
               <div className="w-3/5 p-4 bg-zinc-900 flex flex-col justify-center h-full">
                 <span className="text-sm font-pixel text-zinc-200 uppercase">Mywebu</span>

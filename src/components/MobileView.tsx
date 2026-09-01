@@ -37,7 +37,7 @@ export default function MobileView({
         <div style={{ display: activeTab === 'home' ? 'flex' : 'none' }} className="flex-1 overflow-y-auto bg-transparent relative flex-col min-h-full">
             
             {/* TOP SECTION: TERMINAL SIDEBAR */}
-            <div className={`relative shrink-0 bg-zinc-950/90 backdrop-blur-md transition-all duration-700 ease-in-out overflow-hidden z-20 border-b border-zinc-800 ${isSidebarOpen ? 'max-h-[800px] shadow-[0_8px_30px_rgba(0,0,0,0.8)]' : 'max-h-[85px] shadow-sm'}`}>
+            <div className={`absolute top-0 left-0 w-full bg-zinc-950/90 backdrop-blur-md transition-all duration-700 ease-in-out overflow-hidden z-50 border-b border-zinc-800 ${isSidebarOpen ? 'max-h-[800px] shadow-[0_8px_30px_rgba(0,0,0,0.8)]' : 'max-h-[85px] shadow-sm'}`}>
               
               {/* Inner wrapper with fixed height to prevent squishing */}
               <div className="h-[520px] w-full relative">
@@ -151,7 +151,7 @@ export default function MobileView({
 
             {/* BOTTOM SECTION: MAIN CONTENT */}
             <div 
-              className="relative z-10 w-full flex-1 min-h-[450px] flex flex-col pt-8 pb-20 px-4 bg-transparent transition-all duration-500"
+              className="relative z-10 w-full flex-1 min-h-[450px] flex flex-col pt-[100px] pb-20 px-4 bg-transparent transition-all duration-500"
             >
               <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none z-0"></div>
               
