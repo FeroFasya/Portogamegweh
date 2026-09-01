@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   Code, FolderOpen, BookOpen, Star, Settings, ChevronRight, Share2, X, BrainCircuit, PenTool, Award, Play
 } from 'lucide-react';
@@ -276,36 +277,37 @@ export default function MobileView({
               </div>
               
               <div className="flex flex-col gap-4 pb-10">
-              {projects.map((proj, i) => {
-                return (
-                  <div 
-                    key={proj.id} 
-                    className="relative overflow-hidden group cursor-pointer animate-slide-in h-[130px] w-full shing-effect bg-zinc-900 border border-zinc-800 rounded-sm hover:border-zinc-500 transition-colors"
-                    style={{ animationDelay: proj.delay }}
-                  >
-                    <div className={`absolute inset-0 z-10 opacity-90 transition-transform duration-500`}>
-                      <img 
-                        src={proj.image} 
-                        alt={proj.title} 
-                        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
-                      />
-                    </div>
-                    
-                    <div className="absolute inset-0 z-10 p-4 flex flex-col justify-between">
-                      <div className={`w-max bg-zinc-950/80 text-zinc-400 text-[9px] font-mono px-2 py-0.5 rounded-sm border border-zinc-800 shadow-sm uppercase`}>
-                        &gt; {proj.tag}
+                {projects.map((proj, i) => {
+                  return (
+                    <Link href={`/works/${proj.slug}`} key={proj.id} className="block w-full">
+                    <div 
+                      className="relative overflow-hidden group cursor-pointer animate-slide-in h-[130px] w-full shing-effect bg-zinc-900 border border-zinc-800 rounded-sm hover:border-zinc-500 transition-colors"
+                      style={{ animationDelay: proj.delay }}
+                    >
+                      <div className={`absolute inset-0 z-10 opacity-90 transition-transform duration-500`}>
+                        <img 
+                          src={proj.image} 
+                          alt={proj.title} 
+                          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
+                        />
                       </div>
                       
-                      <div className="bg-zinc-950/90 backdrop-blur-md p-2.5 rounded-sm border border-zinc-800">
-                        <h3 className={`font-pixel text-sm text-zinc-200 mb-0.5 flex items-center gap-1.5 uppercase tracking-wide`}>
-                          <span className="text-zinc-500">{proj.icon}</span> {proj.title}
-                        </h3>
-                        <p className="text-[10px] font-mono text-zinc-500 leading-tight line-clamp-2">{proj.desc}</p>
+                      <div className="absolute inset-0 z-20 p-4 flex flex-col justify-between">
+                        <div className={`w-max bg-zinc-950/80 text-zinc-400 text-[9px] font-mono px-2 py-0.5 rounded-sm border border-zinc-800 shadow-sm uppercase`}>
+                          &gt; {proj.category}
+                        </div>
+                        
+                        <div className="bg-zinc-950/90 backdrop-blur-md p-2.5 rounded-sm border border-zinc-800">
+                          <h3 className={`font-pixel text-sm text-zinc-200 mb-0.5 flex items-center gap-1.5 uppercase tracking-wide`}>
+                            <span className="text-zinc-500">{(proj as any).icon}</span> {proj.title}
+                          </h3>
+                          <p className="text-[10px] font-mono text-zinc-500 leading-tight line-clamp-2">{proj.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                    </Link>
+                  );
+                })}
             </div>
             </div>
           </div>

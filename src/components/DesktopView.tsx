@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   Code, FolderOpen, PenTool, BrainCircuit,
   User, BookOpen, MessageSquare,
@@ -279,33 +280,34 @@ export default function DesktopView({
                     }
 
                     return (
-                      <div 
-                        key={proj.id} 
-                        className={`relative overflow-hidden group cursor-pointer animate-slide-in shing-effect ${colSpan} ${rowSpan} bg-zinc-900 border border-zinc-800 rounded-sm hover:border-zinc-500 transition-colors`}
-                        style={{ animationDelay: proj.delay }}
-                      >
-                        <div className={`absolute inset-0 z-10 opacity-90 transition-transform duration-500`}>
-                          <img 
-                            src={proj.image} 
-                            alt={proj.title} 
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
-                          />
-                        </div>
-                        
-                        {/* Content Overlay */}
-                        <div className="absolute inset-0 z-10 p-5 flex flex-col justify-between">
-                          <div className={`w-max bg-zinc-950/80 text-zinc-400 text-[10px] font-mono px-2 py-1 rounded-sm border border-zinc-800 shadow-sm`}>
-                            &gt; {proj.tag}
+                        <Link href={`/works/${proj.slug}`} key={proj.id} className={`block h-full ${colSpan} ${rowSpan}`}>
+                        <div 
+                          className={`relative overflow-hidden group cursor-pointer animate-slide-in shing-effect w-full h-full bg-zinc-900 border border-zinc-800 rounded-sm hover:border-zinc-500 transition-colors`}
+                          style={{ animationDelay: proj.delay }}
+                        >
+                          <div className={`absolute inset-0 z-10 opacity-90 transition-transform duration-500`}>
+                            <img 
+                              src={proj.image} 
+                              alt={proj.title} 
+                              className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
+                            />
                           </div>
                           
-                          <div className="bg-zinc-950/90 backdrop-blur-md p-3 rounded-sm border border-zinc-800 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                            <h3 className={`font-pixel text-lg text-zinc-200 mb-1 flex items-center gap-2 uppercase tracking-wide`}>
-                              <span className="text-zinc-500">{proj.icon}</span> {proj.title}
-                            </h3>
-                            <p className="text-[11px] font-mono text-zinc-500 leading-relaxed line-clamp-2">{proj.desc}</p>
+                          {/* Content Overlay */}
+                          <div className="absolute inset-0 z-20 p-4 flex flex-col justify-between">
+                            <div className="text-[10px] font-mono text-zinc-400 font-medium tracking-wider bg-black/40 self-start px-2 py-1 rounded backdrop-blur-md">
+                              &gt; {proj.category}
+                            </div>
+                            
+                            <div className="bg-zinc-950/90 backdrop-blur-md p-3 rounded-sm border border-zinc-800 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                              <h3 className={`font-pixel text-lg text-zinc-200 mb-1 flex items-center gap-2 uppercase tracking-wide`}>
+                                <span className="text-zinc-500">{(proj as any).icon}</span> {proj.title}
+                              </h3>
+                              <p className="text-[11px] font-mono text-zinc-500 leading-relaxed line-clamp-2">{proj.description}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                        </Link>
                     );
                   })}
                 </div>

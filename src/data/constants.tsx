@@ -2,13 +2,197 @@ import React from 'react';
 import { Mail } from 'lucide-react';
 import { FiGithub as Github, FiLinkedin as Linkedin, FiInstagram as Instagram, FiYoutube as Youtube } from 'react-icons/fi';
 
-export const projects = [
-  { id: 1, title: 'Mywebu', tag: 'Portfolio+', desc: 'My personal portfolio and independent web-development service.', color: 'blue', icon: '🎨', delay: '0ms', image: '/Portogamegweh/images/projects/1.webp' },
-  { id: 2, title: 'AIKA', tag: '3D VRM Waifu', desc: 'Proyek mandiri sistem dialog AI 3D. Terhubung API, TTS, chunking response, dan memori.', color: 'pink', icon: '🌸', delay: '100ms', image: '/Portogamegweh/images/projects/2.webp' },
-  { id: 3, title: 'KIRA AI TRAINER', tag: 'Event: #juaravibecoding', desc: 'AI visual novel companion untuk workout. Menggabungkan kultur wibu & gym! LLM powered.', color: 'yellow', icon: '💪', delay: '200ms', image: '/Portogamegweh/images/projects/3.webp' },
-  { id: 4, title: '20days of heavy', tag: 'Concept Draft', desc: 'Masih di kepala, script belum lengkap. Aku taruh sini biar nggak lupa!', color: 'gray', icon: '⏳', delay: '300ms', image: '/Portogamegweh/images/projects/4.webp' },
-  { id: 5, title: 'College Quests', tag: 'Academic Projects', desc: 'Berbagai aplikasi dan tugas kuliah yang diselesaikan selama di USBYPKP Bandung.', color: 'green', icon: '🎓', delay: '400ms', image: '/Portogamegweh/images/projects/5.webp' }
+
+export type Project = {
+  id: number;
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  fullDescription: string;
+  tags: { name: string; colorClass: string }[];
+  image: string;
+  gallery: { type: 'image' | 'video'; url: string }[];
+  link?: string;
+  status?: string;
+  delay: string;
+};
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    delay: '0ms',
+    slug: 'mywebu',
+    title: 'MyWebu',
+    category: 'Freelance',
+    description: 'Portfolio personal sekaligus layanan pengembangan website independen (Portfolio+) memamerkan karya, informasi, dan jasa web development untuk klien.',
+    fullDescription: 'MyWebu adalah sebuah layanan pembuatan website independen yang memfokuskan diri pada pembuatan landing page, portofolio, dan company profile. Proyek ini awalnya dimulai sebagai eksplorasi desain, namun berkembang menjadi layanan freelance sungguhan.',
+    tags: [
+      { name: 'Web Dev', colorClass: 'text-violet-500' },
+      { name: 'Client Work', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/mywebu/2.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/mywebu/1.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/mywebu/3.png' }
+    ],
+    link: 'https://mywebu.id',
+    status: 'Dihentikan sementara :3'
+  },
+  {
+    id: 2,
+    delay: '100ms',
+    slug: 'aika',
+    title: 'AIKA',
+    category: 'AI Companion',
+    description: 'Sistem dialog AI berbasis model anime 3D VRM dengan integrasi API, Text-to-Speech, response chunking, dan sistem memori. Dikembangkan bersama Miki.',
+    fullDescription: 'AIKA merupakan sistem asisten virtual berbasis 3D avatar (VRM). Aplikasi ini menggunakan Large Language Model untuk menghasilkan respon natural, Text-to-Speech untuk suara, dan Lip Sync otomatis agar avatar tampak hidup saat berbicara.',
+    tags: [
+      { name: 'VRM', colorClass: 'text-teal-500' },
+      { name: 'TTS', colorClass: 'text-zinc-500' },
+      { name: 'LLM', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/aika/1.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/aika/cover.png' },
+      { type: 'video', url: '/Portogamegweh/images/projects/aika/aika.mp4' },
+      { type: 'image', url: '/Portogamegweh/images/projects/aika/2.png' }
+    ],
+    link: 'https://mbg-aika.vercel.app'
+  },
+  {
+    id: 3,
+    delay: '200ms',
+    slug: 'kira-ai-trainer',
+    title: 'KIRA AI Trainer',
+    category: '#juaravibecoding',
+    description: 'Game x Productivity x AI visual novel companion untuk workout yang memadukan kultur anime dan gym, didukung Large Language Model.',
+    fullDescription: 'Mendapat penghargaan dalam kompetisi Vibe Coding, KIRA adalah karakter AI yang bertindak sebagai pelatih kebugaran. Disajikan dalam format visual novel, ia memberikan panduan olahraga interaktif dan motivasi harian.',
+    tags: [
+      { name: 'Visual Novel', colorClass: 'text-yellow-500' },
+      { name: 'LLM', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/kira-ai-trainer/1.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/kira-ai-trainer/cover.png' },
+      { type: 'video', url: '/Portogamegweh/images/projects/kira-ai-trainer/kira1.mp4' },
+      { type: 'video', url: '/Portogamegweh/images/projects/kira-ai-trainer/kira2.mp4' },
+    ],
+    link: 'https://kira-ai-trainer.vercel.app/'
+  },
+  {
+    id: 4,
+    delay: '300ms',
+    slug: 'playverse',
+    title: 'Playverse',
+    category: 'Sci-Fi Storefront',
+    description: 'Platform storefront distribusi game digital bergaya Sci-Fi Glassmorphism. Arsitektur hybrid mobile (Apache Cordova) + Firebase untuk sinkronisasi katalog real-time.',
+    fullDescription: 'Sebuah prototipe toko game digital berdesain futuristik. Dibangun dengan pendekatan hybrid menggunakan Apache Cordova dan terhubung ke backend Firebase untuk manajemen data produk secara langsung.',
+    tags: [
+      { name: 'Cordova', colorClass: 'text-violet-500' },
+      { name: 'Firebase', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/playverse/1.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/playverse/1.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/playverse/2.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/playverse/3.png' },
+    ],
+    link: '#'
+  },
+  {
+    id: 5,
+    delay: '400ms',
+    slug: 'kuliner-nusantara-semantic',
+    title: 'Kuliner Nusantara Semantic',
+    category: 'Knowledge Graph',
+    description: 'Sistem informasi & pencarian semantik berbasis Knowledge Graph ontologi OWL/RDF (Protégé), triple store Apache Jena Fuseki, dan query SPARQL (PHP) untuk filtering relasional gizi & rasa.',
+    fullDescription: 'Proyek akademik yang berfokus pada web semantik. Mengubah data makanan tradisional Indonesia menjadi format Knowledge Graph, memungkinkan pengguna untuk melakukan pencarian berbasis relasi makna kompleks.',
+    tags: [
+      { name: 'OWL/RDF', colorClass: 'text-teal-500' },
+      { name: 'SPARQL', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/kuliner-nusantara-semantic/cover.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/kuliner-nusantara-semantic/1.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/kuliner-nusantara-semantic/2.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/kuliner-nusantara-semantic/3.png' }
+    ]
+  },
+  {
+    id: 6,
+    delay: '500ms',
+    slug: '20-days-of-heavy',
+    title: '20 Days of Heavy',
+    category: 'In Progress',
+    description: 'Konsep visual novel psikologis, masih dalam tahap perancangan dunia dan pengembangan naskah.',
+    fullDescription: 'Gim cerita interaktif yang saat ini masih dalam fase pre-produksi. Difokuskan pada pengembangan plot naratif bercabang dan penceritaan karakter mendalam.',
+    tags: [
+      { name: 'Narrative Design', colorClass: 'text-yellow-500' }
+    ],
+    image: '/Portogamegweh/images/projects/20-days-of-heavy/cover.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/20-days-of-heavy/1.png' }
+    ],
+    status: 'Masih dikerjakan...'
+  },
+  {
+    id: 7,
+    delay: '600ms',
+    slug: 'arcade-champion-milestone',
+    title: 'Arcade Champion Milestone',
+    category: 'Milestone',
+    description: 'Berpartisipasi dalam program arcade global, meraih milestone tertinggi ke-2 sambil belajar lab lingkungan cloud AI Google.',
+    fullDescription: 'Catatan perjalanan dan pencapaian selama mengikuti Google Cloud Arcade Program. Menyelesaikan lusinan modul hands-on lab mulai dari komputasi awan dasar hingga penerapan model AI generatif.',
+    tags: [
+      { name: 'Google Cloud AI', colorClass: 'text-violet-500' }
+    ],
+    image: '/Portogamegweh/images/projects/arcade-champion-milestone/cover.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/arcade-champion-milestone/1.jpg' }
+    ]
+  },
+  {
+    id: 8,
+    delay: '700ms',
+    slug: 'college-quests',
+    title: 'College Quests',
+    category: 'Akademik',
+    description: 'Kumpulan aplikasi, eksperimen, dan tugas akademik selama studi di Universitas Sangga Buana YPKP Bandung.',
+    fullDescription: 'Repositori sentral yang menaungi berbagai mini-project, tugas pemrograman, dan eksperimen teknis selama masa kuliah.',
+    tags: [
+      { name: 'Eksperimen', colorClass: 'text-teal-500' }
+    ],
+    image: '/Portogamegweh/images/projects/college-quests/cover.png',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/college-quests/1.png' },
+      { type: 'image', url: '/Portogamegweh/images/projects/college-quests/2.jpg' },
+      { type: 'image', url: '/Portogamegweh/images/projects/college-quests/3.jpg' },
+      { type: 'image', url: '/Portogamegweh/images/projects/college-quests/4.jpg' },
+      { type: 'image', url: '/Portogamegweh/images/projects/college-quests/5.jpg' }
+    ]
+  },
+  {
+    id: 9,
+    delay: '800ms',
+    slug: 'mywebuid',
+    title: 'MyWebuID — YouTube',
+    category: 'Konten',
+    description: 'Konten hiburan & edukasi seputar IT, AI, sains, anime, game, meme, dan filsafat sesuai minat.',
+    fullDescription: 'Kanal YouTube yang saya kembangkan untuk berbagi wawasan teknis, tutorial pemrograman ringan, serta konten hiburan kultur pop internet yang dikemas secara kasual.',
+    tags: [
+      { name: 'Edukasi', colorClass: 'text-yellow-500' },
+      { name: 'Hiburan', colorClass: 'text-zinc-500' }
+    ],
+    image: '/Portogamegweh/images/projects/mywebuid/cover.jpg',
+    gallery: [
+      { type: 'image', url: '/Portogamegweh/images/projects/mywebuid/1.jpg' },
+      { type: 'video', url: '/Portogamegweh/images/projects/mywebuid/video.mp4' }
+    ],
+    link: 'https://youtube.com/@MyWebuID'
+  }
 ];
+
 
 export const socialLinks = [
   { icon: <Github size={20} />, label: 'GitHub', url: 'https://github.com/ferofasya', color: 'text-gray-800' },
