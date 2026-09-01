@@ -27,12 +27,9 @@ export default function DesktopView({
   return (
     <div className="hidden lg:flex w-full h-screen relative bg-[#0c0c0c] font-sans text-zinc-300">
       {/* Dynamic Background Area */}
-
-      {/* Preloaded and GPU-accelerated backgrounds */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'home' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bg.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'story' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgstory.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'works' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgwork.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out mix-blend-screen ${activeTab === 'home' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: "url('/Portogamegweh/images/bg.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%) contrast(120%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out mix-blend-screen ${activeTab === 'story' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: "url('/Portogamegweh/images/bgstory.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%) contrast(120%)' }}></div>
       </div>
       <div className="absolute inset-0 z-0 bg-noise opacity-50 pointer-events-none mix-blend-overlay"></div>
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -238,7 +235,9 @@ export default function DesktopView({
           )}
 
           {activeTab === 'works' && (
-            <div className="absolute inset-0 p-8 pt-16 flex flex-col z-20 overflow-hidden bg-transparent">
+            <div className="absolute inset-0 p-8 pt-16 flex flex-col z-20 overflow-hidden bg-[#0c0c0c]">
+              <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+              <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none z-0"></div>
               <style>{`
                 .shing-effect::after {
                   content: '';

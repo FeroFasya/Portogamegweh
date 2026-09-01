@@ -26,22 +26,18 @@ export default function MobileView({
   return (
     <div className="flex lg:hidden w-full h-screen flex-col relative bg-[#0c0c0c] text-zinc-300 font-sans overflow-hidden">
       {/* Dynamic Background Area */}
-
-      {/* Preloaded and GPU-accelerated backgrounds */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'home' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bg.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'story' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgstory.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
-        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === 'works' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: 'url("/Portogamegweh/images/bgwork.webp")', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out mix-blend-screen ${activeTab === 'home' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: "url('/Portogamegweh/images/bg.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%) contrast(120%)' }}></div>
+        <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out mix-blend-screen ${activeTab === 'story' ? 'opacity-[0.15]' : 'opacity-0'}`} style={{ backgroundImage: "url('/Portogamegweh/images/bgstory.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%) contrast(120%)' }}></div>
       </div>
-      <div className="absolute inset-0 z-0 bg-noise opacity-50 pointer-events-none "></div>
+      <div className="absolute inset-0 z-0 bg-noise opacity-50 pointer-events-none mix-blend-overlay"></div>
       
       <div className="relative flex-1 overflow-hidden flex flex-col z-10">
 
-        {activeTab === 'home' && (
-          <div className="flex-1 overflow-y-auto bg-transparent relative flex flex-col min-h-full">
+        <div style={{ display: activeTab === 'home' ? 'flex' : 'none' }} className="flex-1 overflow-y-auto bg-transparent relative flex-col min-h-full">
             
             {/* TOP SECTION: TERMINAL SIDEBAR */}
-            <div className={`relative shrink-0 bg-zinc-950 transition-all duration-700 ease-in-out overflow-hidden z-20 border-b border-zinc-800 ${isSidebarOpen ? 'max-h-[800px] shadow-xl' : 'max-h-[85px] shadow-sm'}`}>
+            <div className={`relative shrink-0 bg-zinc-950/90 backdrop-blur-md transition-all duration-700 ease-in-out overflow-hidden z-20 border-b border-zinc-800 ${isSidebarOpen ? 'max-h-[800px] shadow-[0_8px_30px_rgba(0,0,0,0.8)]' : 'max-h-[85px] shadow-sm'}`}>
               
               {/* Inner wrapper with fixed height to prevent squishing */}
               <div className="h-[520px] w-full relative">
@@ -70,13 +66,13 @@ export default function MobileView({
                     </div>
                     
                     <div className="flex gap-1.5 mt-1 shrink-0">
-                      <div className="bg-zinc-900 border border-zinc-700 rounded-sm h-7 flex items-center px-1.5 shadow-sm">
+                      <div className="bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-sm h-7 flex items-center px-1.5 shadow-sm">
                         <div className="text-zinc-500 mr-1">
                           <Code size={10} strokeWidth={2} />
                         </div>
                         <span className="text-zinc-300 font-pixel text-[10px] pr-0.5 tracking-wider">1.2K</span>
                       </div>
-                      <div className="bg-zinc-900 border border-zinc-700 rounded-sm h-7 flex items-center px-1.5 shadow-sm">
+                      <div className="bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-sm h-7 flex items-center px-1.5 shadow-sm">
                         <div className="text-zinc-500 mr-1">
                           <FolderOpen size={10} strokeWidth={2} />
                         </div>
@@ -184,7 +180,7 @@ export default function MobileView({
               <div className="flex-1 w-full flex flex-col justify-around items-center z-20 mt-4">
                 
                 {/* Chat Bubble */}
-                <div className="w-full max-w-[200px] bg-zinc-900 border border-zinc-700 rounded-sm p-3 shadow-md relative text-left ml-auto mt-8">
+                <div className="w-full max-w-[200px] bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-3 shadow-md relative text-left ml-auto mt-8">
                   <div className="text-[9px] text-zinc-500 font-pixel mb-1.5 uppercase">~$ user.quote</div>
                   <p className="font-mono text-zinc-300 text-[10px] leading-relaxed">"I survive on matcha and spaghetti.<br/>Let's make history together."</p>
                   <p className="text-[9px] text-zinc-500 mt-2 font-mono">&gt; Fero Fasya</p>
@@ -223,11 +219,10 @@ export default function MobileView({
               
             </div>
           </div>
-        )}
 
-        {activeTab === 'works' && (
-          <div className="flex-1 overflow-y-auto bg-transparent relative p-4 pt-6 pb-20">
-            <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none z-0"></div>
+        <div style={{ display: activeTab === 'works' ? 'block' : 'none' }} className="flex-1 overflow-y-auto bg-[#0c0c0c] relative p-4 pt-6 pb-20">
+          <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+          <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none z-0"></div>
             
             <div className="relative z-30">
               <style>{`
@@ -286,7 +281,7 @@ export default function MobileView({
                       <img 
                         src={proj.image} 
                         alt={proj.title} 
-                        className="absolute inset-0 w-full h-full object-cover  opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
+                        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
                       />
                     </div>
                     
@@ -295,7 +290,7 @@ export default function MobileView({
                         &gt; {proj.tag}
                       </div>
                       
-                      <div className="bg-zinc-950 p-2.5 rounded-sm border border-zinc-800">
+                      <div className="bg-zinc-950/90 backdrop-blur-md p-2.5 rounded-sm border border-zinc-800">
                         <h3 className={`font-pixel text-sm text-zinc-200 mb-0.5 flex items-center gap-1.5 uppercase tracking-wide`}>
                           <span className="text-zinc-500">{proj.icon}</span> {proj.title}
                         </h3>
@@ -306,15 +301,14 @@ export default function MobileView({
                 );
               })}
             </div>
+            </div>
           </div>
-          </div>
-        )}
 
         {/* Story Tab on Mobile */}
-        {activeTab === 'story' && (
-          <div 
-            className="flex-1 relative flex flex-col bg-transparent animate-fade-in pb-20"
-          >
+        <div 
+          style={{ display: activeTab === 'story' ? 'flex' : 'none' }}
+          className="flex-1 relative flex-col bg-transparent animate-fade-in pb-20"
+        >
             <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none z-0"></div>
             
             {/* Dynamic Effects */}
@@ -330,7 +324,7 @@ export default function MobileView({
             
             {/* Dialog Box Container (Pushed to bottom) */}
             <div className="mt-auto mb-10 px-4 relative z-20 w-full max-w-md mx-auto">
-              <div className="w-full bg-zinc-900 border border-zinc-700 rounded-sm p-5 relative shadow-md">
+              <div className="w-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 rounded-sm p-5 relative shadow-md">
                 {/* Name Tag */}
                 <div className="absolute -top-4 left-4 bg-zinc-800 text-zinc-300 font-pixel px-4 py-1 rounded-sm border border-zinc-700 text-[11px] uppercase">
                   Fero_Fasya
@@ -349,7 +343,6 @@ export default function MobileView({
               </div>
             </div>
           </div>
-        )}
       </div>
 
       {/* Mobile Bottom Nav */}

@@ -3,11 +3,11 @@ import { Mail } from 'lucide-react';
 import { FiGithub as Github, FiLinkedin as Linkedin, FiInstagram as Instagram, FiYoutube as Youtube } from 'react-icons/fi';
 
 export const projects = [
-  { id: 1, title: 'Mywebu', tag: 'Portfolio+', desc: 'My personal portfolio and independent web-development service.', color: 'blue', icon: '🎨', delay: '0ms', image: '/Portogamegweh/images/projects/1.png' },
-  { id: 2, title: 'AIKA', tag: '3D VRM Waifu', desc: 'Proyek mandiri sistem dialog AI 3D. Terhubung API, TTS, chunking response, dan memori.', color: 'pink', icon: '🌸', delay: '100ms', image: '/Portogamegweh/images/projects/2.png' },
-  { id: 3, title: 'KIRA AI TRAINER', tag: 'Event: #juaravibecoding', desc: 'AI visual novel companion untuk workout. Menggabungkan kultur wibu & gym! LLM powered.', color: 'yellow', icon: '💪', delay: '200ms', image: '/Portogamegweh/images/projects/3.png' },
-  { id: 4, title: '20days of heavy', tag: 'Concept Draft', desc: 'Masih di kepala, script belum lengkap. Aku taruh sini biar nggak lupa!', color: 'gray', icon: '⏳', delay: '300ms', image: '/Portogamegweh/images/projects/4.png' },
-  { id: 5, title: 'College Quests', tag: 'Academic Projects', desc: 'Berbagai aplikasi dan tugas kuliah yang diselesaikan selama di USBYPKP Bandung.', color: 'green', icon: '🎓', delay: '400ms', image: '/Portogamegweh/images/projects/5.png' }
+  { id: 1, title: 'Mywebu', tag: 'Portfolio+', desc: 'My personal portfolio and independent web-development service.', color: 'blue', icon: '🎨', delay: '0ms', image: '/Portogamegweh/images/projects/1.webp' },
+  { id: 2, title: 'AIKA', tag: '3D VRM Waifu', desc: 'Proyek mandiri sistem dialog AI 3D. Terhubung API, TTS, chunking response, dan memori.', color: 'pink', icon: '🌸', delay: '100ms', image: '/Portogamegweh/images/projects/2.webp' },
+  { id: 3, title: 'KIRA AI TRAINER', tag: 'Event: #juaravibecoding', desc: 'AI visual novel companion untuk workout. Menggabungkan kultur wibu & gym! LLM powered.', color: 'yellow', icon: '💪', delay: '200ms', image: '/Portogamegweh/images/projects/3.webp' },
+  { id: 4, title: '20days of heavy', tag: 'Concept Draft', desc: 'Masih di kepala, script belum lengkap. Aku taruh sini biar nggak lupa!', color: 'gray', icon: '⏳', delay: '300ms', image: '/Portogamegweh/images/projects/4.webp' },
+  { id: 5, title: 'College Quests', tag: 'Academic Projects', desc: 'Berbagai aplikasi dan tugas kuliah yang diselesaikan selama di USBYPKP Bandung.', color: 'green', icon: '🎓', delay: '400ms', image: '/Portogamegweh/images/projects/5.webp' }
 ];
 
 export const socialLinks = [
