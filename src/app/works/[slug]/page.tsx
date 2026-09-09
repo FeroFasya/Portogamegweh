@@ -82,16 +82,16 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             <div className="h-px flex-1 bg-zinc-800"></div>
           </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-6 custom-scrollbar snap-x">
+          <div className="flex gap-4 md:gap-6 overflow-x-auto pb-6 custom-scrollbar snap-x items-center">
             {project.gallery.map((media, i) => (
               <div 
                 key={i} 
-                className="shrink-0 snap-center relative rounded-sm overflow-hidden border border-zinc-800 bg-zinc-900/50 flex items-center justify-center max-h-[70vh] group shing-effect"
+                className="shrink-0 snap-center relative rounded-sm overflow-hidden border border-zinc-800 bg-zinc-900/50 flex items-center justify-center group shing-effect"
               >
                 {media.type === 'video' ? (
                   <video 
                     src={media.url} 
-                    className="max-h-[70vh] w-auto object-contain"
+                    className="max-w-[85vw] md:max-w-[70vw] lg:max-w-[900px] max-h-[50vh] md:max-h-[70vh] w-auto h-auto object-contain"
                     autoPlay
                     loop
                     muted
@@ -101,7 +101,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                   <img 
                     src={media.url} 
                     alt={`${project.title} preview ${i + 1}`}
-                    className="max-h-[70vh] w-auto object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    className="max-w-[85vw] md:max-w-[70vw] lg:max-w-[900px] max-h-[50vh] md:max-h-[70vh] w-auto h-auto object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                   />
                 )}
               </div>
