@@ -100,7 +100,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 ) : (
                   <img 
                     src={media.url} 
-                    alt={\`\${project.title} preview \${i + 1}\`}
+                    alt={`${project.title} preview ${i + 1}`}
                     className="max-h-[70vh] w-auto object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                   />
                 )}
