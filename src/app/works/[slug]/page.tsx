@@ -24,11 +24,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
       {/* Navigation */}
       <nav className="relative z-20 w-full p-4 md:p-6 lg:p-8">
-        <Link href="/" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group">
+        <Link href="/?tab=works" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group">
           <div className="w-8 h-8 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center group-hover:border-zinc-500 transition-colors">
             <ChevronLeft size={16} />
           </div>
-          <span className="font-mono text-xs uppercase tracking-widest">Back to Hub</span>
+          <span className="font-mono text-xs uppercase tracking-widest">Kembali ke Portofolio</span>
         </Link>
       </nav>
 
@@ -82,37 +82,30 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             <div className="h-px flex-1 bg-zinc-800"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.gallery.map((media, i) => {
-              const isFullWidth = i === 0 || (i % 3 === 0 && project.gallery.length > 2);
-              
-              return (
-                <div 
-                  key={i} 
-                  className={`bg-zinc-900 border border-zinc-800 rounded-sm overflow-hidden relative group shing-effect ${isFullWidth ? 'md:col-span-2' : ''}`}
-                >
-                  {media.type === 'video' ? (
-                    <div className="relative w-full aspect-video">
-                      <video 
-                        src={media.url} 
-                        className="w-full h-full object-cover"
-                        controls
-                        muted
-                        playsInline
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-[16/9] md:aspect-auto h-full min-h-[300px]">
-                      <img 
-                        src={media.url} 
-                        alt={`${project.title} preview ${i + 1}`}
-                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                      />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+          <div className="flex gap-6 overflow-x-auto pb-6 custom-scrollbar snap-x">
+            {project.gallery.map((media, i) => (
+              <div 
+                key={i} 
+                className="shrink-0 snap-center relative rounded-sm overflow-hidden border border-zinc-800 bg-zinc-900/50 flex items-center justify-center max-h-[70vh] group shing-effect"
+              >
+                {media.type === 'video' ? (
+                  <video 
+                    src={media.url} 
+                    className="max-h-[70vh] w-auto object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img 
+                    src={media.url} 
+                    alt={\`\${project.title} preview \${i + 1}\`}
+                    className="max-h-[70vh] w-auto object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                  />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </main>
